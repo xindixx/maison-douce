@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Douce — Sleepwear for Soft Evenings</title>
+  <meta name="description" content="Feminine, French-inspired pajamas made for comfort. Babydoll sets, ruffle trims and silky shorts for slow mornings and soft evenings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announce">Livraison offerte — free shipping on orders over $80 ♡</div>
+
+  <header class="nav">
+    <a href="#" class="logo">Maison <em>Douce</em></a>
+    <nav class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#story">Notre Histoire</a>
+      <a href="#care">Fabric &amp; Care</a>
+      <a href="#journal">Journal</a>
+    </nav>
+    <button class="bag-btn" id="bagBtn" aria-label="Open shopping bag">
+      Bag (<span id="bagCount">0</span>)
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="script">pour les soirées douces</p>
+      <h1>Sleepwear as soft<br>as a Sunday in Paris</h1>
+      <p class="lede">Airy chiffon, ribbon ties and gentle silhouettes — pajamas made to feel as lovely as they look.</p>
+      <a href="#collection" class="btn">Shop the Collection</a>
+    </div>
+    <div class="hero-art">
+      <div class="arch" id="heroArt"></div>
+      <p class="caption">La Rose babydoll set — <em>rose poudré</em></p>
+    </div>
+  </section>
+
+  <!-- PROMISES -->
+  <section class="promises">
+    <div><span>✿</span><h3>Breathable chiffon</h3><p>Light layers that move with you</p></div>
+    <div><span>✿</span><h3>Relaxed fit</h3><p>Flowing shapes, never tight</p></div>
+    <div><span>✿</span><h3>Made in small batches</h3><p>Thoughtfully, never wastefully</p></div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <p class="script center">la collection</p>
+    <h2 class="center">The First Edit</h2>
+    <div class="filters" id="filters">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="babydoll">Babydoll Sets</button>
+      <button data-filter="set">Cami &amp; Short Sets</button>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story-art" id="storyArt"></div>
+    <div class="story-text">
+      <p class="script">notre histoire</p>
+      <h2>Made for the girl who romanticises her evenings</h2>
+      <p>Maison Douce began with a simple wish: pajamas that feel like a soft exhale at the end of the day — and look pretty enough to keep on for a slow morning coffee.</p>
+      <p>Each piece is inspired by vintage French lingerie: scooped necklines, satin ribbon bows and floaty hems, cut generously so comfort always comes first.</p>
+      <a href="#collection" class="link">Discover the pieces →</a>
+    </div>
+  </section>
+
+  <!-- FABRIC & CARE -->
+  <section class="care" id="care">
+    <h2 class="center">Fabric &amp; Care</h2>
+    <div class="care-grid">
+      <div><h3>Chiffon</h3><p>Soft, sheer and breathable. Double-layered at the bust for coverage.</p></div>
+      <div><h3>Satin ribbon</h3><p>Hand-tied bows on every neckline — adjustable, never itchy.</p></div>
+      <div><h3>Gentle wash</h3><p>Cold hand wash or delicate cycle in a mesh bag. Lay flat to dry.</p></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="journal">
+    <p class="script center">le journal</p>
+    <h2 class="center">Join our little letter</h2>
+    <p class="center">New drops, slow-living notes, and 10% off your first order.</p>
+    <form id="newsForm" class="news-form">
+      <input type="email" required placeholder="Your email address" aria-label="Email address">
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+    <p class="center form-msg" id="newsMsg" hidden>Merci! You're on the list ♡</p>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <a href="#" class="logo">Maison <em>Douce</em></a>
+      <p>Sleepwear for soft evenings.</p>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <a href="#">Shipping &amp; Returns</a>
+      <a href="#">Size Guide</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+    <p class="copy">© 2026 Maison Douce. Fait avec amour.</p>
+  </footer>
+
+  <!-- SHOPPING BAG DRAWER -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping bag">
+    <div class="drawer-head">
+      <h3>Your Bag</h3>
+      <button id="closeBag" aria-label="Close bag">×</button>
+    </div>
+    <div class="drawer-items" id="bagItems"></div>
+    <div class="drawer-foot">
+      <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0</span></div>
+      <button class="btn full" id="checkoutBtn">Checkout</button>
+      <p class="note" id="checkoutNote" hidden>Checkout isn't connected yet — this is a preview store. Payments can be added with Shopify or Stripe.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
