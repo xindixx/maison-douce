@@ -33,10 +33,10 @@ function setSVG(colour, trim) {
 
 // ---------- Products: edit names, colours and prices here ----------
 const products = [
-  { id: 1, name: "La Rose",      colourName: "rose poudré",  type: "babydoll", ruffle: false, colour: "#f2c6c6", trim: "#e3a3a6", bg: "#f7e4e1", price: 68, tag: "Bestseller" },
-  { id: 2, name: "Blanche",      colourName: "ivoire",       type: "babydoll", ruffle: true,  colour: "#fffaf3", trim: "#e9dccb", bg: "#efe6dc", price: 72 },
-  { id: 3, name: "Céleste",      colourName: "bleu ciel",    type: "babydoll", ruffle: false, colour: "#d3e2ef", trim: "#aec6dc", bg: "#e8eef2", price: 68 },
-  { id: 4, name: "Lilas",        colourName: "lilas",        type: "babydoll", ruffle: true,  colour: "#e1d4ec", trim: "#c4b0da", bg: "#efe8f3", price: 72, tag: "New" },
+  { id: 1, name: "La Rose",      colourName: "rose poudré",  type: "babydoll", ruffle: false, img: "images/rose-main.jpg", img2: "images/rose-2.jpg", colour: "#f2c6c6", trim: "#e3a3a6", bg: "#f7e4e1", price: 68, tag: "Bestseller" },
+  { id: 2, name: "Blanche",      colourName: "ivoire",       type: "babydoll", ruffle: true,  img: "images/blanche.jpg", colour: "#fffaf3", trim: "#e9dccb", bg: "#efe6dc", price: 72 },
+  { id: 3, name: "Céleste",      colourName: "bleu ciel",    type: "babydoll", ruffle: false, img: "images/celeste.jpg", colour: "#d3e2ef", trim: "#aec6dc", bg: "#e8eef2", price: 68 },
+  { id: 9, name: "Vanille",      colourName: "jaune vanille", type: "babydoll", ruffle: false, img: "images/vanille.jpg", colour: "#f6ecc4", trim: "#e6d38f", bg: "#f6efdc", price: 68, tag: "New" },
   { id: 5, name: "Pêche",        colourName: "pêche",        type: "set",      colour: "#f6d2bd", trim: "#e8b294", bg: "#f8e6dc", price: 58 },
   { id: 6, name: "Crème Brûlée", colourName: "beurre",       type: "set",      colour: "#f5e6c4", trim: "#e2c992", bg: "#f6efdc", price: 58, tag: "New" },
   { id: 7, name: "Sauge",        colourName: "vert sauge",   type: "set",      colour: "#d3dcc8", trim: "#adbd9c", bg: "#e8ece1", price: 58 },
@@ -44,7 +44,10 @@ const products = [
 ];
 const sizes = ["XS", "S", "M", "L", "XL"];
 
-const art = p => p.type === "set" ? setSVG(p.colour, p.trim) : babydollSVG(p.colour, p.trim, p.ruffle);
+// Uses the product photo when there is one, otherwise the drawing
+const art = (p, src = p.img) => src
+  ? `<img src="${src}" alt="${p.name} pajamas in ${p.colourName}" loading="lazy">`
+  : p.type === "set" ? setSVG(p.colour, p.trim) : babydollSVG(p.colour, p.trim, p.ruffle);
 
 // ---------- Render collection ----------
 const grid = document.getElementById("productGrid");
@@ -54,9 +57,10 @@ function renderProducts(filter = "all") {
     .filter(p => filter === "all" || p.type === filter)
     .map(p => `
       <article class="card">
-        <div class="card-img" style="--card-bg:${p.bg}">
+        <div class="card-img${p.img ? " photo" : ""}${p.img2 ? " has-alt" : ""}" style="--card-bg:${p.bg}">
           ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
           ${art(p)}
+          ${p.img2 ? art(p, p.img2).replace("<img", '<img class="alt"') : ""}
         </div>
         <h3>${p.name}</h3>
         <p class="colour">${p.colourName}</p>
@@ -79,12 +83,14 @@ document.getElementById("filters").addEventListener("click", e => {
 });
 
 // Hero and story illustrations
-document.getElementById("heroArt").innerHTML = art(products[0]);
-document.getElementById("storyArt").innerHTML = art(products[1]);
+document.getElementById("heroArt").innerHTML = art(products[0], products[0].img2 || products[0].img);
+document.getElementById("storyArt").innerHTML =
+  `<img src="images/friends.jpg" alt="Three friends laughing in blue, pink and yellow babydoll sets">`;
 
 // ---------- Shopping bag ----------
 let bag = [];
 try { bag = JSON.parse(localStorage.getItem("md-bag")) || []; } catch { bag = []; }
+bag = bag.filter(i => products.some(p => p.id === i.id)); // drop products that no longer exist
 
 function saveBag() {
   try { localStorage.setItem("md-bag", JSON.stringify(bag)); } catch {}
