@@ -1,99 +1,289 @@
-// ---------- Pajama illustrations (drawn with SVG, no photos needed) ----------
-// Replace these with real product photos once you have them.
+// ---------- Collections: edit names, descriptions and prices here ----------
+const collections = [
+  { id: "midnight", numeral: "I",   name: "Midnight Muse",    fr: "la muse de minuit",
+    piece: "Satin pyjama set", price: 180, img: "images/midnight-vert.jpg",
+    text: "Liquid satin with contrast piping, a tie at the throat and crystals scattered like stars. Made for the hours after dark.",
+    story: "Midnight Muse is our love letter to the vintage pyjama. Fluid satin falls softly from a rounded collar edged in contrast piping, closing with a slim tie at the neckline and covered buttons. Wide sleeves move as you do, and hand-placed crystals catch the lamplight like stars on a late night.",
+    details: ["Rounded notch collar with contrast piping", "Slim tie at the neckline", "Covered button front", "Wide, relaxed sleeves", "Patch pocket", "Hand-placed crystal embellishments", "Relaxed fit: take your usual size"],
+    care: "Hand wash cold or use a delicate cycle in a mesh bag. Do not tumble dry; hang to dry. Iron on low heat on the reverse, avoiding the crystals." },
+  { id: "dream",    numeral: "II",  name: "Dream Come True",  fr: "un rêve devenu réalité",
+    piece: "Pointelle bandeau & ruffle set", price: 120, img: "images/dream-rose.jpg",
+    text: "Soft pointelle knit, puffed cap sleeves and a tiny satin bow, finished with a double-tiered ruffle edged in picot.",
+    story: "Dream Come True is sweetness itself. A soft pointelle knit, light enough to breathe through warm nights, shapes a square-neck bandeau with puffed cap sleeves and a tiny bow at the centre. It's paired with a double-tiered ruffle bottom, every edge finished in delicate picot trim.",
+    details: ["Breathable pointelle knit", "Square neckline with a tiny bow", "Puffed cap sleeves", "Double-tiered ruffle bottom", "Picot trim on every edge", "Close, stretchy fit: take your usual size"],
+    care: "Machine wash cold on a gentle cycle in a mesh bag. Lay flat to dry to keep the ruffles' shape. Do not tumble dry." },
+  { id: "living",   numeral: "III", name: "Living the Dream", fr: "vivre le rêve",
+    piece: "Chiffon babydoll", price: 130, img: "images/living-rose.jpg",
+    text: "Floating chiffon with a double-layer scooped neckline and a satin ribbon tie. Light as a summer evening.",
+    story: "Living the Dream is the babydoll you'll reach for on every warm evening. Airy chiffon swings out from a generous double-layer scooped neckline, gathered at the front by a single satin ribbon. The trapeze shape floats away from the body, so it feels like wearing nothing at all.",
+    details: ["Sheer, airy chiffon", "Double-layer scooped neckline for coverage", "Satin ribbon tie at the centre front", "Swingy trapeze silhouette", "Wide shoulder straps", "Loose fit: size down for a closer look"],
+    care: "Hand wash cold with a gentle detergent. Lay flat to dry. Cool iron only if needed." },
+];
 
-function babydollSVG(colour, trim, ruffle) {
-  const neck = ruffle
-    ? `<path d="M54 58 Q100 112 146 58" fill="none" stroke="${trim}" stroke-width="12" stroke-linecap="round" stroke-dasharray="1 9"/>`
-    : `<path d="M54 58 Q100 112 146 58" fill="none" stroke="${trim}" stroke-width="9" stroke-linecap="round"/>
-       <path d="M58 64 Q100 118 142 64" fill="none" stroke="${trim}" stroke-width="3" opacity=".6"/>`;
-  return `<svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M45 200 L155 200 L165 240 L108 242 L100 226 L92 242 L35 240 Z" fill="${trim}"/>
-    <path d="M62 22 L76 22 L80 58 L64 60 Z M124 22 L138 22 L136 60 L120 58 Z" fill="${colour}"/>
-    <path d="M58 55 Q100 108 142 55 L150 64 Q170 150 190 218 Q168 230 145 219 Q122 231 100 220 Q78 231 55 219 Q32 230 10 218 Q30 150 50 64 Z" fill="${colour}"/>
-    <path d="M85 100 Q78 160 60 215 M100 108 L100 218 M115 100 Q122 160 140 215" fill="none" stroke="#000" stroke-opacity=".06" stroke-width="3"/>
-    <path d="M10 218 Q32 230 55 219 Q78 231 100 220 Q122 231 145 219 Q168 230 190 218" fill="none" stroke="${trim}" stroke-width="2.5"/>
-    ${neck}
-    <path d="M100 86 C86 70 78 84 100 87 M100 86 C114 70 122 84 100 87" fill="none" stroke="${trim}" stroke-width="2.5"/>
-    <path d="M99 87 Q95 130 97 178 M101 87 Q105 120 104 152" fill="none" stroke="${trim}" stroke-width="2"/>
-  </svg>`;
-}
-
-function setSVG(colour, trim) {
-  return `<svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M70 18 L72 62 M130 18 L128 62" stroke="${trim}" stroke-width="3"/>
-    <path d="M62 60 Q100 88 138 60 L148 142 Q100 152 52 142 Z" fill="${colour}"/>
-    <path d="M62 60 Q100 88 138 60" fill="none" stroke="${trim}" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 7"/>
-    <path d="M52 142 Q100 152 148 142" fill="none" stroke="${trim}" stroke-width="2"/>
-    <path d="M100 75 C90 64 84 74 100 77 M100 75 C110 64 116 74 100 77 M99 77 L97 98 M101 77 L104 94" fill="none" stroke="${trim}" stroke-width="2"/>
-    <path d="M56 160 L144 160 L158 232 Q132 240 106 233 L100 196 L94 233 Q68 240 42 232 Z" fill="${colour}"/>
-    <path d="M56 160 L144 160" stroke="${trim}" stroke-width="7"/>
-    <path d="M42 232 Q68 240 94 233 M106 233 Q132 240 158 232" fill="none" stroke="${trim}" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 6"/>
-  </svg>`;
-}
-
-// ---------- Products: edit names, colours and prices here ----------
+// ---------- Products: one per colour. Add `img: "images/…jpg"` when a photo is ready ----------
 const products = [
-  { id: 1, name: "La Rose",      colourName: "rose poudré",  type: "babydoll", ruffle: false, img: "images/rose-main.jpg", img2: "images/rose-2.jpg", colour: "#f2c6c6", trim: "#e3a3a6", bg: "#f7e4e1", price: 68, tag: "Bestseller" },
-  { id: 2, name: "Blanche",      colourName: "ivoire",       type: "babydoll", ruffle: true,  img: "images/blanche.jpg", colour: "#fffaf3", trim: "#e9dccb", bg: "#efe6dc", price: 72 },
-  { id: 3, name: "Céleste",      colourName: "bleu ciel",    type: "babydoll", ruffle: false, img: "images/celeste.jpg", colour: "#d3e2ef", trim: "#aec6dc", bg: "#e8eef2", price: 68 },
-  { id: 9, name: "Vanille",      colourName: "jaune vanille", type: "babydoll", ruffle: false, img: "images/vanille.jpg", colour: "#f6ecc4", trim: "#e6d38f", bg: "#f6efdc", price: 68, tag: "New" },
-  { id: 5, name: "Pêche",        colourName: "pêche",        type: "set",      colour: "#f6d2bd", trim: "#e8b294", bg: "#f8e6dc", price: 58 },
-  { id: 6, name: "Crème Brûlée", colourName: "beurre",       type: "set",      colour: "#f5e6c4", trim: "#e2c992", bg: "#f6efdc", price: 58, tag: "New" },
-  { id: 7, name: "Sauge",        colourName: "vert sauge",   type: "set",      colour: "#d3dcc8", trim: "#adbd9c", bg: "#e8ece1", price: 58 },
-  { id: 8, name: "Cerise",       colourName: "cerise douce", type: "set",      colour: "#eaa9ad", trim: "#fff4f1", bg: "#f6e0e0", price: 62 },
+  { id: 1, collection: "midnight", colourName: "vert amande",   swatch: "#cfcdaa", img: "images/midnight-vert.jpg" },
+  { id: 2, collection: "midnight", colourName: "blanc nacré",   swatch: "#f3eee4", img: "images/midnight-blanc.jpg" },
+  { id: 3, collection: "dream",    colourName: "rose poudré",   swatch: "#f0cfcd", img: "images/dream-rose.jpg" },
+  { id: 4, collection: "dream",    colourName: "jaune beurre",  swatch: "#f3e6b8" },
+  { id: 5, collection: "dream",    colourName: "bleu ciel",     swatch: "#cfdcea" },
+  { id: 6, collection: "living",   colourName: "rose poudré",   swatch: "#f0cfcd", img: "images/living-rose.jpg", img2: "images/rose-2.jpg", tag: "Bestseller" },
+  { id: 7, collection: "living",   colourName: "jaune vanille", swatch: "#f3e6b8", img: "images/living-jaune.jpg", img2: "images/vanille.jpg" },
+  { id: 8, collection: "living",   colourName: "bleu ciel",     swatch: "#cfdcea", img: "images/living-bleu.jpg", img2: "images/celeste.jpg" },
 ];
 const sizes = ["XS", "S", "M", "L", "XL"];
 
-// Uses the product photo when there is one, otherwise the drawing
-const art = (p, src = p.img) => src
-  ? `<img src="${src}" alt="${p.name} pajamas in ${p.colourName}" loading="lazy">`
-  : p.type === "set" ? setSVG(p.colour, p.trim) : babydollSVG(p.colour, p.trim, p.ruffle);
-
-// ---------- Render collection ----------
-const grid = document.getElementById("productGrid");
-
-function renderProducts(filter = "all") {
-  grid.innerHTML = products
-    .filter(p => filter === "all" || p.type === filter)
-    .map(p => `
-      <article class="card">
-        <div class="card-img${p.img ? " photo" : ""}${p.img2 ? " has-alt" : ""}" style="--card-bg:${p.bg}">
-          ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
-          ${art(p)}
-          ${p.img2 ? art(p, p.img2).replace("<img", '<img class="alt"') : ""}
-        </div>
-        <h3>${p.name}</h3>
-        <p class="colour">${p.colourName}</p>
-        <p class="price">$${p.price}</p>
-        <div class="card-actions">
-          <select aria-label="Size for ${p.name}" id="size-${p.id}">
-            ${sizes.map(s => `<option${s === "S" ? " selected" : ""}>${s}</option>`).join("")}
-          </select>
-          <button class="add" data-id="${p.id}">Add to bag</button>
-        </div>
-      </article>`)
-    .join("");
-}
-
-document.getElementById("filters").addEventListener("click", e => {
-  if (e.target.tagName !== "BUTTON") return;
-  document.querySelectorAll("#filters button").forEach(b => b.classList.remove("active"));
-  e.target.classList.add("active");
-  renderProducts(e.target.dataset.filter);
+// Each product takes its name, piece and price from its collection
+products.forEach(p => {
+  const c = collections.find(c => c.id === p.collection);
+  Object.assign(p, { name: c.name, piece: c.piece, price: p.price ?? c.price });
 });
 
-// Hero and story illustrations
-document.getElementById("heroArt").innerHTML = art(products[0], products[0].img2 || products[0].img);
-document.getElementById("storyArt").innerHTML =
-  `<img src="images/friends.jpg" alt="Three friends laughing in blue, pink and yellow babydoll sets">`;
+// Link to a collection's own page (optionally opened on one colour)
+const pageUrl = (collectionId, productId) =>
+  `collection.html?c=${collectionId}${productId ? `&colour=${productId}` : ""}`;
 
-// ---------- Shopping bag ----------
+// Uses the product photo when there is one, otherwise a soft colour tile
+const art = (p, src = p.img, cls = "") => src
+  ? `<img${cls ? ` class="${cls}"` : ""} src="${src}" alt="${p.name} ${p.piece.toLowerCase()} in ${p.colourName}" loading="lazy">`
+  : `<div class="pending" style="--swatch:${p.swatch}"><span>photographie<br>à venir</span></div>`;
+
+// ======================================================================
+// HOME PAGE (index.html)
+// ======================================================================
+const grid = document.getElementById("productGrid");
+
+if (grid) {
+  // The three collection features
+  document.getElementById("collections").innerHTML = collections.map(c => {
+    const colours = products.filter(p => p.collection === c.id);
+    return `<article class="feature">
+      <a href="${pageUrl(c.id)}" class="feature-img"><img src="${c.img}" alt="${c.name} ${c.piece.toLowerCase()}" loading="lazy"></a>
+      <div class="feature-text">
+        <p class="numeral">N° ${c.numeral}</p>
+        <h2>${c.name}</h2>
+        <p class="fr">${c.fr}</p>
+        <p>${c.text}</p>
+        <ul class="swatches">
+          ${colours.map(p => `<li><span style="background:${p.swatch}"></span>${p.colourName}</li>`).join("")}
+        </ul>
+        <p class="from">${c.piece} · RM${c.price}</p>
+        <a href="${pageUrl(c.id)}" class="link">Discover the collection</a>
+      </div>
+    </article>`;
+  }).join("");
+
+  // Shop grid: clicking a photo or name opens that collection's page on that colour
+  function renderProducts(filter = "all") {
+    grid.innerHTML = products
+      .filter(p => filter === "all" || p.collection === filter)
+      .map(p => `
+        <article class="card">
+          <div class="card-img${p.img2 ? " has-alt" : ""}">
+            ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
+            <a href="${pageUrl(p.collection, p.id)}" class="card-link" aria-label="View ${p.name} in ${p.colourName}">
+              ${art(p)}
+              ${p.img2 ? art(p, p.img2, "alt") : ""}
+            </a>
+            <button class="quick" data-id="${p.id}" aria-label="Choose a size for ${p.name} in ${p.colourName}">+</button>
+            <div class="sizes" id="sizes-${p.id}">
+              <p>Select size</p>
+              <div>${sizes.map(s => `<button class="size" data-id="${p.id}" data-size="${s}">${s}</button>`).join("")}</div>
+            </div>
+          </div>
+          <a href="${pageUrl(p.collection, p.id)}" class="card-info">
+            <div>
+              <h3>${p.name}</h3>
+              <p class="colour">${p.colourName}</p>
+            </div>
+            <p class="price">RM${p.price}</p>
+          </a>
+        </article>`)
+      .join("");
+  }
+
+  function setFilter(filter) {
+    document.querySelectorAll("#filters button").forEach(b =>
+      b.classList.toggle("active", b.dataset.filter === filter));
+    renderProducts(filter);
+  }
+
+  document.getElementById("filters").addEventListener("click", e => {
+    if (e.target.tagName === "BUTTON") setFilter(e.target.dataset.filter);
+  });
+
+  // "Shop all" in the menu resets the filter
+  document.addEventListener("click", e => {
+    const link = e.target.closest("[data-goto]");
+    if (link) { setFilter(link.dataset.goto); closeMenu(); }
+  });
+
+  // "+" opens the size picker; choosing a size adds to the bag
+  grid.addEventListener("click", e => {
+    if (e.target.classList.contains("quick")) {
+      const panel = document.getElementById("sizes-" + e.target.dataset.id);
+      const wasOpen = panel.classList.contains("open");
+      document.querySelectorAll(".sizes.open").forEach(s => s.classList.remove("open"));
+      panel.classList.toggle("open", !wasOpen);
+      return;
+    }
+    if (!e.target.classList.contains("size")) return;
+    e.target.closest(".sizes").classList.remove("open");
+    addToBag(Number(e.target.dataset.id), e.target.dataset.size);
+  });
+
+  renderProducts();
+}
+
+// ======================================================================
+// COLLECTION PAGE (collection.html?c=midnight&colour=2)
+// ======================================================================
+const pdp = document.getElementById("pdp");
+
+if (pdp) {
+  const params = new URLSearchParams(location.search);
+  const c = collections.find(c => c.id === params.get("c")) || collections[0];
+  const colours = products.filter(p => p.collection === c.id);
+  let current = colours.find(p => p.id === Number(params.get("colour"))) || colours[0];
+  let chosenSize = null;
+
+  document.title = `${c.name} — ${c.piece} | Maison Douce`;
+
+  // Every photo in this collection, labelled with its colour
+  const photos = colours.flatMap(p => [p.img, p.img2].filter(Boolean).map(src => ({ src, p })));
+
+  pdp.innerHTML = `
+    <div class="gallery">
+      <div class="gallery-main" id="mainPhoto"></div>
+      <div class="thumbs" id="thumbs">
+        ${photos.map((ph, i) => `<button class="thumb-btn" data-i="${i}" aria-label="Show ${ph.p.colourName} photo">
+          <img src="${ph.src}" alt="" loading="lazy"></button>`).join("")}
+      </div>
+    </div>
+    <div class="info">
+      <p class="crumbs"><a href="index.html#collections">Collections</a> / N° ${c.numeral}</p>
+      <h1>${c.name}</h1>
+      <p class="fr">${c.fr}</p>
+      <p class="pdp-piece">${c.piece}</p>
+      <p class="pdp-price">RM${c.price}</p>
+
+      <div class="choose">
+        <p class="label">Colour — <span id="colourName"></span></p>
+        <div class="colour-opts" id="colourOpts">
+          ${colours.map(p => `<button class="colour-opt" data-id="${p.id}" style="--swatch:${p.swatch}" aria-label="${p.colourName}"></button>`).join("")}
+        </div>
+      </div>
+
+      <div class="choose">
+        <p class="label">Size <span id="sizeHint"></span></p>
+        <div class="size-opts" id="sizeOpts">
+          ${sizes.map(s => `<button class="size-opt" data-size="${s}">${s}</button>`).join("")}
+        </div>
+      </div>
+
+      <button class="btn full" id="addBtn">Add to bag</button>
+
+      <p class="pdp-story">${c.story}</p>
+
+      <details open>
+        <summary>Details</summary>
+        <ul>${c.details.map(d => `<li>${d}</li>`).join("")}</ul>
+      </details>
+      <details>
+        <summary>Fabric &amp; care</summary>
+        <p>${c.care}</p>
+      </details>
+      <details>
+        <summary>Shipping</summary>
+        <p>Complimentary shipping on orders over RM250.</p>
+      </details>
+    </div>`;
+
+  // Other collections at the bottom of the page
+  document.getElementById("moreGrid").innerHTML = collections.filter(o => o.id !== c.id).map(o => `
+    <a href="${pageUrl(o.id)}" class="more-card">
+      <div class="more-img"><img src="${o.img}" alt="${o.name} ${o.piece.toLowerCase()}" loading="lazy"></div>
+      <h3>${o.name}</h3>
+      <p class="colour">${o.piece} · RM${o.price}</p>
+    </a>`).join("");
+
+  function showPhoto(src) {
+    document.getElementById("mainPhoto").innerHTML = src
+      ? `<img src="${src}" alt="${current.name} ${current.piece.toLowerCase()} in ${current.colourName}">`
+      : art(current);
+    document.querySelectorAll(".thumb-btn").forEach(b =>
+      b.classList.toggle("active", photos[b.dataset.i].src === src));
+  }
+
+  function selectColour(p, src = p.img) {
+    current = p;
+    document.getElementById("colourName").textContent = p.colourName;
+    document.querySelectorAll(".colour-opt").forEach(b =>
+      b.classList.toggle("active", Number(b.dataset.id) === p.id));
+    showPhoto(src);
+    history.replaceState(null, "", pageUrl(c.id, p.id));
+  }
+
+  document.getElementById("colourOpts").addEventListener("click", e => {
+    const b = e.target.closest(".colour-opt");
+    if (b) selectColour(colours.find(p => p.id === Number(b.dataset.id)));
+  });
+
+  document.getElementById("thumbs").addEventListener("click", e => {
+    const b = e.target.closest(".thumb-btn");
+    if (b) { const ph = photos[b.dataset.i]; selectColour(ph.p, ph.src); }
+  });
+
+  document.getElementById("sizeOpts").addEventListener("click", e => {
+    const b = e.target.closest(".size-opt");
+    if (!b) return;
+    chosenSize = b.dataset.size;
+    document.querySelectorAll(".size-opt").forEach(o => o.classList.toggle("active", o === b));
+    document.getElementById("sizeHint").textContent = "";
+  });
+
+  document.getElementById("addBtn").addEventListener("click", () => {
+    if (!chosenSize) {
+      document.getElementById("sizeHint").textContent = "— please choose a size";
+      return;
+    }
+    addToBag(current.id, chosenSize);
+    openBag();
+  });
+
+  selectColour(current);
+}
+
+// ======================================================================
+// SHARED: menu, bag, newsletter, toast
+// ======================================================================
+
+// Mobile menu
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+function closeMenu() { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+navLinks.addEventListener("click", e => { if (e.target.tagName === "A" && !e.target.dataset.goto) closeMenu(); });
+
+// Shopping bag
 let bag = [];
-try { bag = JSON.parse(localStorage.getItem("md-bag")) || []; } catch { bag = []; }
+try { bag = JSON.parse(localStorage.getItem("md-bag-v2")) || []; } catch { bag = []; }
 bag = bag.filter(i => products.some(p => p.id === i.id)); // drop products that no longer exist
 
 function saveBag() {
-  try { localStorage.setItem("md-bag", JSON.stringify(bag)); } catch {}
+  try { localStorage.setItem("md-bag-v2", JSON.stringify(bag)); } catch {}
+}
+
+function addToBag(id, size) {
+  const existing = bag.find(i => i.id === id && i.size === size);
+  existing ? existing.qty++ : bag.push({ id, size, qty: 1 });
+  saveBag();
+  renderBag();
+  const p = products.find(p => p.id === id);
+  showToast(`${p.name}, ${p.colourName}, size ${size} — added to your bag`);
 }
 
 function renderBag() {
@@ -101,7 +291,7 @@ function renderBag() {
   const count = bag.reduce((n, i) => n + i.qty, 0);
   const total = bag.reduce((n, i) => n + i.qty * products.find(p => p.id === i.id).price, 0);
   document.getElementById("bagCount").textContent = count;
-  document.getElementById("subtotal").textContent = "$" + total;
+  document.getElementById("subtotal").textContent = "RM" + total;
 
   if (!bag.length) {
     items.innerHTML = `<p class="empty">Your bag is empty, chérie.</p>`;
@@ -120,24 +310,13 @@ function renderBag() {
           <button data-act="inc" data-idx="${idx}" aria-label="Increase">+</button>
         </div>
       </div>
-      <div>
-        <div>$${p.price * i.qty}</div>
+      <div class="line-end">
+        <div>RM${p.price * i.qty}</div>
         <button class="remove" data-act="remove" data-idx="${idx}">Remove</button>
       </div>
     </div>`;
   }).join("");
 }
-
-grid.addEventListener("click", e => {
-  if (!e.target.classList.contains("add")) return;
-  const id = Number(e.target.dataset.id);
-  const size = document.getElementById("size-" + id).value;
-  const existing = bag.find(i => i.id === id && i.size === size);
-  existing ? existing.qty++ : bag.push({ id, size, qty: 1 });
-  saveBag();
-  renderBag();
-  showToast(`${products.find(p => p.id === id).name} added to your bag ♡`);
-});
 
 document.getElementById("bagItems").addEventListener("click", e => {
   const idx = e.target.dataset.idx;
@@ -161,22 +340,21 @@ document.getElementById("checkoutBtn").addEventListener("click", () => {
   document.getElementById("checkoutNote").hidden = false;
 });
 
-// ---------- Newsletter ----------
+// Newsletter
 document.getElementById("newsForm").addEventListener("submit", e => {
   e.preventDefault();
   e.target.hidden = true;
   document.getElementById("newsMsg").hidden = false;
 });
 
-// ---------- Little pop-up message ----------
+// Little pop-up message
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById("toast");
   t.textContent = msg;
   t.classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
 }
 
-renderProducts();
 renderBag();

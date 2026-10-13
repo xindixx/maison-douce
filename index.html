@@ -3,130 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison Douce — Sleepwear for Soft Evenings</title>
-  <meta name="description" content="Feminine, French-inspired pajamas made for comfort. Babydoll sets, ruffle trims and silky shorts for slow mornings and soft evenings.">
+  <title>Maison Douce — Sleepwear for the Hours After Dark</title>
+  <meta name="description" content="Luxury French-inspired sleepwear in three collections: Midnight Muse satin pyjamas, Dream Come True pointelle sets and Living the Dream chiffon babydolls.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23f5e3df'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' text-anchor='middle' fill='%235b2d35'%3EMD%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232a2321'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='46' text-anchor='middle' fill='%23f8f4ee'%3EMD%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="announce">Livraison offerte — free shipping on orders over $80 ♡</div>
+  <div class="announce">Livraison offerte dès RM250 &nbsp;·&nbsp; complimentary shipping on orders over RM250</div>
 
+  <!-- HEADER: menu on the left, logo in the middle, bag on the right -->
   <header class="nav">
-    <a href="#" class="logo">Maison <em>Douce</em></a>
-    <nav class="nav-links">
-      <a href="#collection">Collection</a>
-      <a href="#story">Notre Histoire</a>
-      <a href="#care">Fabric &amp; Care</a>
-      <a href="#journal">Journal</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <div class="has-drop">
+        <a href="#shop">Shop</a>
+        <div class="drop">
+          <a href="#shop" data-goto="all">Shop all</a>
+          <a href="collection.html?c=midnight">Midnight Muse</a>
+          <a href="collection.html?c=dream">Dream Come True</a>
+          <a href="collection.html?c=living">Living the Dream</a>
+        </div>
+      </div>
+      <a href="#collections">Collections</a>
+      <a href="#maison">La Maison</a>
+      <a href="#care">Care</a>
     </nav>
-    <button class="bag-btn" id="bagBtn" aria-label="Open shopping bag">
-      Bag (<span id="bagCount">0</span>)
-    </button>
+    <a href="#" class="logo">Maison Douce</a>
+    <button class="bag-btn" id="bagBtn" aria-label="Open shopping bag">Bag (<span id="bagCount">0</span>)</button>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: one full-width photo with a single button -->
   <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="A woman in a blush satin slip doing her make-up at a vintage vanity">
     <div class="hero-text">
-      <p class="script">pour les soirées douces</p>
-      <h1>Sleepwear as soft<br>as a Sunday in Paris</h1>
-      <p class="lede">Airy chiffon, ribbon ties and gentle silhouettes — pajamas made to feel as lovely as they look.</p>
-      <a href="#collection" class="btn">Shop the Collection</a>
-    </div>
-    <div class="hero-art">
-      <div class="arch" id="heroArt"></div>
-      <p class="caption">La Rose babydoll set — <em>rose poudré</em></p>
+      <h1>For the woman who<br><em>dresses for herself</em></h1>
+      <a href="#collections" class="btn light">Discover the collection</a>
     </div>
   </section>
 
-  <!-- PROMISES -->
-  <section class="promises">
-    <div><span>✿</span><h3>Breathable chiffon</h3><p>Light layers that move with you</p></div>
-    <div><span>✿</span><h3>Relaxed fit</h3><p>Flowing shapes, never tight</p></div>
-    <div><span>✿</span><h3>Made in small batches</h3><p>Thoughtfully, never wastefully</p></div>
+  <!-- INTRO -->
+  <section class="intro">
+    <p class="eyebrow">Maison Douce</p>
+    <p class="statement">Sleepwear made like an heirloom: cut generously, finished with care, and beautiful enough to be <em>seen in</em>.</p>
   </section>
 
-  <!-- COLLECTION -->
-  <section class="collection" id="collection">
-    <p class="script center">la collection</p>
-    <h2 class="center">The First Edit</h2>
+  <!-- THE THREE COLLECTIONS (filled in by script.js) -->
+  <section class="collections" id="collections"></section>
+
+  <!-- SHOP GRID -->
+  <section class="shop" id="shop">
+    <div class="section-head">
+      <p class="eyebrow">La boutique</p>
+      <h2>The <em>edit</em></h2>
+    </div>
     <div class="filters" id="filters">
       <button class="active" data-filter="all">All</button>
-      <button data-filter="babydoll">Babydoll Sets</button>
-      <button data-filter="set">Cami &amp; Short Sets</button>
+      <button data-filter="midnight">Midnight Muse</button>
+      <button data-filter="dream">Dream Come True</button>
+      <button data-filter="living">Living the Dream</button>
     </div>
     <div class="grid" id="productGrid"></div>
   </section>
 
-  <!-- STORY -->
-  <section class="story" id="story">
-    <div class="story-art" id="storyArt"></div>
-    <div class="story-text">
-      <p class="script">notre histoire</p>
-      <h2>Made for the girl who romanticises her evenings</h2>
-      <p>Maison Douce began with a simple wish: pajamas that feel like a soft exhale at the end of the day — and look pretty enough to keep on for a slow morning coffee.</p>
-      <p>Each piece is inspired by vintage French lingerie: scooped necklines, satin ribbon bows and floaty hems, cut generously so comfort always comes first.</p>
-      <a href="#collection" class="link">Discover the pieces →</a>
-    </div>
+  <!-- EDITORIAL IMAGE -->
+  <section class="editorial">
+    <img src="images/friends.jpg" alt="Three friends laughing in blue, pink and yellow Living the Dream babydolls">
+    <blockquote><span>« Le luxe, c'est d'être <em>bien chez soi</em>. »</span></blockquote>
+  </section>
+
+  <!-- LA MAISON (our story) -->
+  <section class="maison" id="maison">
+    <p class="eyebrow">La Maison</p>
+    <h2>For the woman who<br><em>dresses for herself</em></h2>
+    <p>Maison Douce began with a quiet wish: pyjamas that feel like a soft exhale at the end of the day, and look lovely enough to keep on for a slow morning coffee.</p>
+    <p>Each piece borrows from vintage French lingerie: piped collars, satin ribbon ties, picot trims and floating hems. Everything is made in small batches and cut generously, so comfort always comes first.</p>
   </section>
 
   <!-- FABRIC & CARE -->
   <section class="care" id="care">
-    <h2 class="center">Fabric &amp; Care</h2>
-    <div class="care-grid">
-      <div><h3>Chiffon</h3><p>Soft, sheer and breathable. Double-layered at the bust for coverage.</p></div>
-      <div><h3>Satin ribbon</h3><p>Hand-tied bows on every neckline — adjustable, never itchy.</p></div>
-      <div><h3>Gentle wash</h3><p>Cold hand wash or delicate cycle in a mesh bag. Lay flat to dry.</p></div>
+    <div>
+      <p class="numeral">I</p>
+      <h3>Satin</h3>
+      <p>Fluid and cool against the skin, with contrast piping and hand-placed crystals.</p>
+    </div>
+    <div>
+      <p class="numeral">II</p>
+      <h3>Pointelle</h3>
+      <p>A soft, breathable knit with tiny open-work holes, edged in picot trim.</p>
+    </div>
+    <div>
+      <p class="numeral">III</p>
+      <h3>Chiffon</h3>
+      <p>Sheer and airy, double-layered at the neckline for coverage. Hand wash cold, lay flat to dry.</p>
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="newsletter" id="journal">
-    <p class="script center">le journal</p>
-    <h2 class="center">Join our little letter</h2>
-    <p class="center">New drops, slow-living notes, and 10% off your first order.</p>
-    <form id="newsForm" class="news-form">
-      <input type="email" required placeholder="Your email address" aria-label="Email address">
-      <button class="btn" type="submit">Subscribe</button>
-    </form>
-    <p class="center form-msg" id="newsMsg" hidden>Merci! You're on the list ♡</p>
-  </section>
-
+  <!-- FOOTER with newsletter -->
   <footer class="footer">
-    <div>
-      <a href="#" class="logo">Maison <em>Douce</em></a>
-      <p>Sleepwear for soft evenings.</p>
+    <div class="news">
+      <h3>Subscribe to our <em>newsletter</em></h3>
+      <p>Be the first to hear about new collections, private edits and slow-living notes.</p>
+      <form id="newsForm" class="news-form">
+        <input type="email" required placeholder="Email address" aria-label="Email address">
+        <button type="submit">Join</button>
+      </form>
+      <p class="form-msg" id="newsMsg" hidden>Merci — vous êtes sur la liste.</p>
     </div>
-    <div>
-      <h4>Help</h4>
-      <a href="#">Shipping &amp; Returns</a>
-      <a href="#">Size Guide</a>
-      <a href="#">Contact</a>
+    <div class="foot-cols">
+      <div>
+        <h4>Client care</h4>
+        <a href="#">Shipping</a>
+        <a href="#">Returns &amp; exchanges</a>
+        <a href="#">Size guide</a>
+        <a href="#care">Fabric &amp; care</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>La maison</h4>
+        <a href="#maison">Our story</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">TikTok</a>
+      </div>
     </div>
-    <div>
-      <h4>Follow</h4>
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#">TikTok</a>
-    </div>
-    <p class="copy">© 2026 Maison Douce. Fait avec amour.</p>
+    <p class="wordmark">Maison Douce</p>
+    <p class="copy">© 2026 Maison Douce · Fait avec amour</p>
   </footer>
 
   <!-- SHOPPING BAG DRAWER -->
   <div class="overlay" id="overlay" hidden></div>
   <aside class="drawer" id="drawer" aria-label="Shopping bag">
     <div class="drawer-head">
-      <h3>Your Bag</h3>
+      <h3>Your bag</h3>
       <button id="closeBag" aria-label="Close bag">×</button>
     </div>
     <div class="drawer-items" id="bagItems"></div>
     <div class="drawer-foot">
-      <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0</span></div>
+      <div class="subtotal"><span>Subtotal</span><span id="subtotal">RM0</span></div>
       <button class="btn full" id="checkoutBtn">Checkout</button>
-      <p class="note" id="checkoutNote" hidden>Checkout isn't connected yet — this is a preview store. Payments can be added with Shopify or Stripe.</p>
+      <p class="note" id="checkoutNote" hidden>Checkout isn't connected yet. This is a preview store; payments will come through Shopify.</p>
     </div>
   </aside>
 

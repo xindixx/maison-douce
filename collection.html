@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection | Maison Douce</title>
+  <meta name="description" content="Luxury French-inspired sleepwear in three collections: Midnight Muse satin pyjamas, Dream Come True pointelle sets and Living the Dream chiffon babydolls.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232a2321'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='46' text-anchor='middle' fill='%23f8f4ee'%3EMD%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announce">Livraison offerte dès RM250 &nbsp;·&nbsp; complimentary shipping on orders over RM250</div>
+
+  <!-- HEADER (same as index.html): menu on the left, logo in the middle, bag on the right -->
+  <header class="nav">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <div class="has-drop">
+        <a href="index.html#shop">Shop</a>
+        <div class="drop">
+          <a href="index.html#shop">Shop all</a>
+          <a href="collection.html?c=midnight">Midnight Muse</a>
+          <a href="collection.html?c=dream">Dream Come True</a>
+          <a href="collection.html?c=living">Living the Dream</a>
+        </div>
+      </div>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#maison">La Maison</a>
+      <a href="index.html#care">Care</a>
+    </nav>
+    <a href="index.html" class="logo">Maison Douce</a>
+    <button class="bag-btn" id="bagBtn" aria-label="Open shopping bag">Bag (<span id="bagCount">0</span>)</button>
+  </header>
+
+  <!-- COLLECTION PAGE: filled in by script.js from the ?c= part of the address -->
+  <main class="pdp" id="pdp"></main>
+
+  <!-- OTHER COLLECTIONS -->
+  <section class="more">
+    <div class="section-head">
+      <p class="eyebrow">Vous aimerez aussi</p>
+      <h2>The other <em>collections</em></h2>
+    </div>
+    <div class="more-grid" id="moreGrid"></div>
+  </section>
+
+  <!-- FOOTER with newsletter -->
+  <footer class="footer">
+    <div class="news">
+      <h3>Subscribe to our <em>newsletter</em></h3>
+      <p>Be the first to hear about new collections, private edits and slow-living notes.</p>
+      <form id="newsForm" class="news-form">
+        <input type="email" required placeholder="Email address" aria-label="Email address">
+        <button type="submit">Join</button>
+      </form>
+      <p class="form-msg" id="newsMsg" hidden>Merci — vous êtes sur la liste.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4>Client care</h4>
+        <a href="#">Shipping</a>
+        <a href="#">Returns &amp; exchanges</a>
+        <a href="#">Size guide</a>
+        <a href="index.html#care">Fabric &amp; care</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>La maison</h4>
+        <a href="index.html#maison">Our story</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <p class="wordmark">Maison Douce</p>
+    <p class="copy">© 2026 Maison Douce · Fait avec amour</p>
+  </footer>
+
+  <!-- SHOPPING BAG DRAWER -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping bag">
+    <div class="drawer-head">
+      <h3>Your bag</h3>
+      <button id="closeBag" aria-label="Close bag">×</button>
+    </div>
+    <div class="drawer-items" id="bagItems"></div>
+    <div class="drawer-foot">
+      <div class="subtotal"><span>Subtotal</span><span id="subtotal">RM0</span></div>
+      <button class="btn full" id="checkoutBtn">Checkout</button>
+      <p class="note" id="checkoutNote" hidden>Checkout isn't connected yet. This is a preview store; payments will come through Shopify.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
