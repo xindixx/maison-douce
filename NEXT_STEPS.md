@@ -2,10 +2,11 @@
 
 This is the to-do list, in order. Future Claude sessions should read this first (along with `CLAUDE.md`), pick up the first unfinished step, and tick items off here as they get done.
 
-Last updated: 2026-10-13
+Last updated: 2026-11-24
 
 ## Where things stand
 - 2026-10-13: the site was redesigned to look "luxury + French", with a layout based on fromrooms.com and three collections: **Midnight Muse**, **Dream Come True** and **Living the Dream** (details in `CLAUDE.md`). The owner hasn't approved it or asked to push it yet.
+- 2026-11-24: owner's first review changes, saved to GitHub: product and colour names in English only, Dream Come True became a satin & lace cami trouser set (ivory, almond green), the French quote on the editorial photo was removed, and the shop heading is now just "La boutique".
 - The site is **not live**; GitHub Pages isn't switched on.
 
 ## 0. Owner review of the redesign (do this first)
@@ -23,7 +24,7 @@ Last updated: 2026-10-13
 
 ## 2. Photos still missing
 - [x] Midnight Muse in blanc nacré (white), Living the Dream in yellow and blue (added 2026-10-13)
-- [ ] Dream Come True in jaune (yellow) and bleu (blue)
+- [x] ~~Dream Come True in yellow and blue~~ (2026-11-24: Dream Come True is now an satin & lace set in ivory and almond green)
 - Each of these shows a "photographie à venir" colour tile until it has a photo. Add `img: "images/<name>.jpg"` to that product in `script.js`.
 - Options: Claude writes prompts for ChatGPT, Gemini or Canva; buy Higgsfield credits; or the owner sends reference photos.
 
@@ -55,7 +56,7 @@ Last updated: 2026-10-13
 
 ## 9. Tech packs for the manufacturer (not started)
 A tech pack is a document that tells a factory exactly how to make a garment.
-- [ ] One per style: babydoll set and cami & short set.
+- [ ] One per style: Midnight Muse satin pyjama set, Dream Come True satin & lace cami trouser set, Living the Dream chiffon babydoll.
 - Each one covers: flat sketches (front/back), measurements per size XS–XL, fabric (chiffon, double layer at the bust), trims (satin ribbon bows, ruffles), colours, stitching details, labels and packaging.
 
 ## 10. Cost & pricing spreadsheet (not started)

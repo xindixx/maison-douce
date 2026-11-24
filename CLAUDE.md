@@ -20,23 +20,24 @@
 - Playwright MCP is installed (user scope) for browser testing. Test at desktop width and at phone width (390px).
 
 ### Design (redesigned 2026-10-13: "luxury + French")
-- Layout modelled on https://www.fromrooms.com: sticky header (menu left with a Shop dropdown, centred logo, bag right) → full-width hero photo (`images/hero.jpg`, a woman in a blush satin slip at a vanity) with the headline "For the woman who / dresses for herself" and a "Discover the collection" button, nothing else (owner's request) → intro line → one large feature block per collection → shop grid with filters and a "+" quick-add size picker → full-width editorial photo with a quote → La Maison story → fabric & care → dark footer with the newsletter ("Subscribe to our newsletter") and a large wordmark.
+- Layout modelled on https://www.fromrooms.com: sticky header (menu left with a Shop dropdown, centred logo, bag right) → full-width hero photo (`images/hero.jpg`, a woman in a blush satin slip at a vanity) with the headline "For the woman who / dresses for herself" and a "Discover the collection" button, nothing else (owner's request) → intro line → one large feature block per collection → shop grid with filters and a "+" quick-add size picker → full-width editorial photo (no text; the French quote was removed 2026-11-24) → La Maison story → fabric & care → dark footer with the newsletter ("Subscribe to our newsletter") and a large wordmark.
 - Colours (`style.css` `:root`): ivory `#f8f4ee` background, paper `#f0e9df`, hairlines `#ddd2c4`, taupe `#8b7d70`, ink `#2a2321` (text, buttons, footer), bordeaux `#4b1e26` (italic accent words).
 - Fonts: Cormorant Garamond (light headings, with italic accent words), Jost (body, plus small spaced-out capitals for labels). No script font and no rounded "cute" shapes; keep it minimal and editorial.
 
 ### Collections and products (`collections` and `products` in `script.js`)
 | Collection | Piece | Colours | Price | Photos |
 |---|---|---|---|---|
-| Midnight Muse | satin pyjama set (piping, neck tie, crystals) | vert amande, blanc nacré | RM180 | `midnight-vert.jpg`, `midnight-blanc.jpg` |
-| Dream Come True | pointelle bandeau & ruffle set | rose, jaune, bleu | RM120 | pink `dream-rose.jpg`; yellow/blue: none |
-| Living the Dream | chiffon babydoll (double-layer scoop neck, ribbon tie) | rose, jaune, bleu | RM130 | `living-rose.jpg`, `living-jaune.jpg`, `living-bleu.jpg` (hover photos: `rose-2.jpg`, `vanille.jpg`, `celeste.jpg`) |
+| Midnight Muse | satin pyjama set (piping, neck tie, crystals) | almond green, pearl white | RM180 | `midnight-vert.jpg`, `midnight-blanc.jpg` |
+| Dream Come True | satin & lace cami and wide-leg trouser set (changed 2026-11-24; was a pointelle ruffle set) | ivory, almond green | RM120 | `dream-ivory.jpg`, `dream-green.jpg` |
+| Living the Dream | chiffon babydoll (double-layer scoop neck, ribbon tie) | powder pink, vanilla yellow, sky blue | RM130 | `living-rose.jpg`, `living-jaune.jpg`, `living-bleu.jpg` (hover photos: `rose-2.jpg`, `vanille.jpg`, `celeste.jpg`) |
 
+- Product names and colour names are in English only (owner's request, 2026-11-24): no French subtitles under collection names.
 - Each product is one colour. A product without `img` shows a colour tile reading "photographie à venir".
 - Prices are in **Malaysian ringgit (RM)** and were set by the owner. The free-shipping threshold in the announcement bar (RM250) is a placeholder Claude picked and needs the owner's confirmation.
-- `friends.jpg` is the editorial photo. `rose-main.jpg` and `blanche.jpg` are no longer used.
+- `friends.jpg` is the editorial photo. `rose-main.jpg`, `blanche.jpg` and `dream-rose.jpg` are no longer used.
 
 ### Image sources (important)
-- `hero.jpg`, `midnight-vert.jpg`, `midnight-blanc.jpg`, `dream-rose.jpg`, `living-rose.jpg`, `living-jaune.jpg` and `living-bleu.jpg` were cropped from reference images the owner sent (they appear to be Pinterest images from other brands). `rose-2.jpg` is from Pinterest/SHEIN. `celeste.jpg`, `vanille.jpg` and `friends.jpg` are from a "Babe Doll" collage. **All of them are placeholders and must be replaced with the owner's own product photos before selling.** Remind the owner of this.
+- `hero.jpg`, `dream-ivory.jpg` and `dream-green.jpg` (screenshots the owner sent on 2026-11-24), `midnight-vert.jpg`, `midnight-blanc.jpg`, `dream-rose.jpg`, `living-rose.jpg`, `living-jaune.jpg` and `living-bleu.jpg` were cropped from reference images the owner sent (they appear to be Pinterest images from other brands). `rose-2.jpg` is from Pinterest/SHEIN. `celeste.jpg`, `vanille.jpg` and `friends.jpg` are from a "Babe Doll" collage. **All of them are placeholders and must be replaced with the owner's own product photos before selling.** Remind the owner of this.
 - The owner wants **photo-realistic images, not drawings**. Claude can't generate photos itself. The Higgsfield MCP is connected, but the account has **0 credits**. Alternatives: the owner makes images in ChatGPT, Gemini or Canva from prompts Claude writes.
 
 ### Testing without Playwright

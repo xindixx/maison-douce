@@ -1,18 +1,18 @@
 // ---------- Collections: edit names, descriptions and prices here ----------
 const collections = [
-  { id: "midnight", numeral: "I",   name: "Midnight Muse",    fr: "la muse de minuit",
+  { id: "midnight", numeral: "I",   name: "Midnight Muse",   
     piece: "Satin pyjama set", price: 180, img: "images/midnight-vert.jpg",
     text: "Liquid satin with contrast piping, a tie at the throat and crystals scattered like stars. Made for the hours after dark.",
     story: "Midnight Muse is our love letter to the vintage pyjama. Fluid satin falls softly from a rounded collar edged in contrast piping, closing with a slim tie at the neckline and covered buttons. Wide sleeves move as you do, and hand-placed crystals catch the lamplight like stars on a late night.",
     details: ["Rounded notch collar with contrast piping", "Slim tie at the neckline", "Covered button front", "Wide, relaxed sleeves", "Patch pocket", "Hand-placed crystal embellishments", "Relaxed fit: take your usual size"],
     care: "Hand wash cold or use a delicate cycle in a mesh bag. Do not tumble dry; hang to dry. Iron on low heat on the reverse, avoiding the crystals." },
-  { id: "dream",    numeral: "II",  name: "Dream Come True",  fr: "un rêve devenu réalité",
-    piece: "Pointelle bandeau & ruffle set", price: 120, img: "images/dream-rose.jpg",
-    text: "Soft pointelle knit, puffed cap sleeves and a tiny satin bow, finished with a double-tiered ruffle edged in picot.",
-    story: "Dream Come True is sweetness itself. A soft pointelle knit, light enough to breathe through warm nights, shapes a square-neck bandeau with puffed cap sleeves and a tiny bow at the centre. It's paired with a double-tiered ruffle bottom, every edge finished in delicate picot trim.",
-    details: ["Breathable pointelle knit", "Square neckline with a tiny bow", "Puffed cap sleeves", "Double-tiered ruffle bottom", "Picot trim on every edge", "Close, stretchy fit: take your usual size"],
-    care: "Machine wash cold on a gentle cycle in a mesh bag. Lay flat to dry to keep the ruffles' shape. Do not tumble dry." },
-  { id: "living",   numeral: "III", name: "Living the Dream", fr: "vivre le rêve",
+  { id: "dream",    numeral: "II",  name: "Dream Come True",
+    piece: "Satin & lace cami trouser set", price: 120, img: "images/dream-ivory.jpg",
+    text: "Soft satin framed in open floral lace: a lace-panelled camisole and wide, floor-skimming trousers.",
+    story: "Dream Come True is quiet bridal romance for every night. A fluid satin camisole on fine straps opens into a deep V of floral lace, with more lace falling from the side slits. Wide-leg trousers pool softly at the ankle, their hems finished in a deep band of the same open lace.",
+    details: ["Fluid satin with floral lace trim", "V-neck camisole with a lace panel", "Fine adjustable straps", "Lace-trimmed side slits", "Wide-leg trousers with an elasticated waist", "Deep lace band at the hem", "Relaxed fit: take your usual size"],
+    care: "Hand wash cold or use a delicate cycle in a mesh bag. Do not tumble dry; hang to dry. Iron on low heat on the reverse, avoiding the lace." },
+  { id: "living",   numeral: "III", name: "Living the Dream",
     piece: "Chiffon babydoll", price: 130, img: "images/living-rose.jpg",
     text: "Floating chiffon with a double-layer scooped neckline and a satin ribbon tie. Light as a summer evening.",
     story: "Living the Dream is the babydoll you'll reach for on every warm evening. Airy chiffon swings out from a generous double-layer scooped neckline, gathered at the front by a single satin ribbon. The trapeze shape floats away from the body, so it feels like wearing nothing at all.",
@@ -22,14 +22,13 @@ const collections = [
 
 // ---------- Products: one per colour. Add `img: "images/…jpg"` when a photo is ready ----------
 const products = [
-  { id: 1, collection: "midnight", colourName: "vert amande",   swatch: "#cfcdaa", img: "images/midnight-vert.jpg" },
-  { id: 2, collection: "midnight", colourName: "blanc nacré",   swatch: "#f3eee4", img: "images/midnight-blanc.jpg" },
-  { id: 3, collection: "dream",    colourName: "rose poudré",   swatch: "#f0cfcd", img: "images/dream-rose.jpg" },
-  { id: 4, collection: "dream",    colourName: "jaune beurre",  swatch: "#f3e6b8" },
-  { id: 5, collection: "dream",    colourName: "bleu ciel",     swatch: "#cfdcea" },
-  { id: 6, collection: "living",   colourName: "rose poudré",   swatch: "#f0cfcd", img: "images/living-rose.jpg", img2: "images/rose-2.jpg", tag: "Bestseller" },
-  { id: 7, collection: "living",   colourName: "jaune vanille", swatch: "#f3e6b8", img: "images/living-jaune.jpg", img2: "images/vanille.jpg" },
-  { id: 8, collection: "living",   colourName: "bleu ciel",     swatch: "#cfdcea", img: "images/living-bleu.jpg", img2: "images/celeste.jpg" },
+  { id: 1, collection: "midnight", colourName: "almond green",   swatch: "#cfcdaa", img: "images/midnight-vert.jpg" },
+  { id: 2, collection: "midnight", colourName: "pearl white",   swatch: "#f3eee4", img: "images/midnight-blanc.jpg" },
+  { id: 3, collection: "dream",    colourName: "ivory",         swatch: "#efe6d6", img: "images/dream-ivory.jpg" },
+  { id: 9, collection: "dream",    colourName: "almond green",  swatch: "#cfcdaa", img: "images/dream-green.jpg" },
+  { id: 6, collection: "living",   colourName: "powder pink",   swatch: "#f0cfcd", img: "images/living-rose.jpg", img2: "images/rose-2.jpg", tag: "Bestseller" },
+  { id: 7, collection: "living",   colourName: "vanilla yellow", swatch: "#f3e6b8", img: "images/living-jaune.jpg", img2: "images/vanille.jpg" },
+  { id: 8, collection: "living",   colourName: "sky blue",      swatch: "#cfdcea", img: "images/living-bleu.jpg", img2: "images/celeste.jpg" },
 ];
 const sizes = ["XS", "S", "M", "L", "XL"];
 
@@ -62,7 +61,6 @@ if (grid) {
       <div class="feature-text">
         <p class="numeral">N° ${c.numeral}</p>
         <h2>${c.name}</h2>
-        <p class="fr">${c.fr}</p>
         <p>${c.text}</p>
         <ul class="swatches">
           ${colours.map(p => `<li><span style="background:${p.swatch}"></span>${p.colourName}</li>`).join("")}
@@ -163,7 +161,6 @@ if (pdp) {
     <div class="info">
       <p class="crumbs"><a href="index.html#collections">Collections</a> / N° ${c.numeral}</p>
       <h1>${c.name}</h1>
-      <p class="fr">${c.fr}</p>
       <p class="pdp-piece">${c.piece}</p>
       <p class="pdp-price">RM${c.price}</p>
 
@@ -271,6 +268,7 @@ navLinks.addEventListener("click", e => { if (e.target.tagName === "A" && !e.tar
 // Shopping bag
 let bag = [];
 try { bag = JSON.parse(localStorage.getItem("md-bag-v2")) || []; } catch { bag = []; }
+bag = bag.filter(i => products.some(p => p.id === i.id)); // drop items that are no longer sold
 bag = bag.filter(i => products.some(p => p.id === i.id)); // drop products that no longer exist
 
 function saveBag() {
