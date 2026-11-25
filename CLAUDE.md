@@ -34,10 +34,10 @@
 - Product names and colour names are in English only (owner's request, 2026-11-24): no French subtitles under collection names.
 - Each product is one colour. A product without `img` shows a colour tile reading "photographie à venir".
 - Prices are in **Malaysian ringgit (RM)** and were set by the owner. The free-shipping threshold in the announcement bar (RM250) is a placeholder Claude picked and needs the owner's confirmation.
-- `friends.jpg` is the editorial photo. `rose-main.jpg`, `blanche.jpg` and `dream-rose.jpg` are no longer used.
+- `editorial-lamp.jpg` (a woman on a satin bed reaching for a fringed lamp; screenshot the owner sent 2026-11-25) is the editorial photo. `friends.jpg`, `rose-main.jpg`, `blanche.jpg` and `dream-rose.jpg` are no longer used.
 
 ### Image sources (important)
-- `hero.jpg`, `dream-ivory.jpg` and `dream-green.jpg` (screenshots the owner sent on 2026-11-24), `midnight-vert.jpg`, `midnight-blanc.jpg`, `dream-rose.jpg`, `living-rose.jpg`, `living-jaune.jpg` and `living-bleu.jpg` were cropped from reference images the owner sent (they appear to be Pinterest images from other brands). `rose-2.jpg` is from Pinterest/SHEIN. `celeste.jpg`, `vanille.jpg` and `friends.jpg` are from a "Babe Doll" collage. **All of them are placeholders and must be replaced with the owner's own product photos before selling.** Remind the owner of this.
+- `hero.jpg`, `dream-ivory.jpg` and `dream-green.jpg` (screenshots the owner sent on 2026-11-24), `midnight-vert.jpg`, `midnight-blanc.jpg`, `dream-rose.jpg`, `living-rose.jpg`, `living-jaune.jpg` and `living-bleu.jpg` were cropped from reference images the owner sent (they appear to be Pinterest images from other brands). `rose-2.jpg` is from Pinterest/SHEIN. `celeste.jpg`, `vanille.jpg` and `friends.jpg` are from a "Babe Doll" collage. `editorial-lamp.jpg` is a screenshot of an unknown source. **All of them are placeholders and must be replaced with the owner's own product photos before selling.** Remind the owner of this.
 - The owner wants **photo-realistic images, not drawings**. Claude can't generate photos itself. The Higgsfield MCP is connected, but the account has **0 credits**. Alternatives: the owner makes images in ChatGPT, Gemini or Canva from prompts Claude writes.
 
 ### Testing without Playwright
